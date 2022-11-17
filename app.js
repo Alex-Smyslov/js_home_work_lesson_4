@@ -33,22 +33,26 @@ averege(2, 3);
 // Написать функцию, которая будет принимать в качестве входного параметра
 // массив любых, целых чисел, и будет возвращать среднее арифметическое
 // значение данного массива*
-// let newArr = ["5", "5", "5", "5", "1"];
-// function arrowAveregeValue(a) {
-// 	let sum = 0;
-// 	let badCount = 0;
-// 	for(let i = 0; i < a.length; i++) {
-// 		if(Number.isFinite(a[i])) {
-// 			sum += parseInt(a[i]);
-// 		} else {
-// 			return "Bad number";
-// 		}
-// 	}
-// 	let averege = sum / a.length;
-// 	console.log(averege);
-// 	return averege;
-// }
-// arrowAveregeValue(newArr);
+let newArr = ["1",2,"3",4,"apple", null];
+
+function arrowAveregeValue(a) {
+	let sum = 0;
+	let p = 0;
+	for(let i = 0; i < a.length; i++){
+		let bool = Number.isInteger(parseInt(a[i]));
+		if(bool) {
+			sum += parseInt(a[i]);
+		}
+		else {
+			p ++;
+		}
+	}
+	let averege = sum / (a.length - p);
+	console.log(averege);
+	return averege;
+}
+
+arrowAveregeValue(newArr);
 
 
 //Напишите стрелочную функцию которая будет выводить переданную строку в
@@ -67,10 +71,6 @@ stringMassege('Hello!', 5);
 // Напишите стрелочную функцию, которая будет принимать в качестве параметра
 // букву и если она гласная, функция будет возвращать true, в противном случае
 // false .
-
-
-// Напишите стрелочную функцию, которая будет возвращать true если строка
-// является палиндромом и false в противном случае.
 
 
 // 1.	Сделайте функцию, которая возвращает квадрат числа. Число передается параметром. func1
@@ -164,11 +164,31 @@ moreThanTen(4, 7);
 
 // 7.	Сделайте функцию, которая параметром принимает число и проверяет - отрицательное оно или нет. 
 // Если отрицательное - пусть функция вернет true, а если нет - false.
-
+function negativeNumber(a) {
+	let b = null;
+	if(a < 0) {
+		b = true;
+	} else {
+		b = false;
+	}
+	console.log(b);
+	return b;
+}
+negativeNumber(3);
 
 // 8.	Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, 
 // что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
-
+function isNumberInRange(a) {
+	let b = null;
+	if(a > 0 && a < 10) {
+		b = true;
+	} else {
+		b = false;
+	}
+	console.log(b);
+	return b;
+}
+isNumberInRange(23);
 
 // 9.	Дан массив с числами. Запишите в новый массив только те числа, 
 // которые больше нуля и меньше 10-ти. Для этого используйте вспомогательную 
@@ -185,7 +205,17 @@ moreThanTen(4, 7);
 
 // 12.	 Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: 
 // четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
-
+function isEven(a) {
+	let b = null;
+	if(a % 2 === 0) {
+		b = true;
+	} else {
+		b = false;
+	}
+	console.log(b);
+	return b;
+}
+isEven(10);
 
 // 13.	 Дан массив с целыми числами. Создайте из него новый массив, 
 // где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию 
